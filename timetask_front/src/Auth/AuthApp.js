@@ -21,7 +21,7 @@ export default function AuthUser() {
                 }
                 if (res.data.id) {
                     localStorage.setItem('token', res.data.id);
-                    navigate('/complited', {require: true});
+                    navigate('/today', {require: true});
                 }
             })
         }
