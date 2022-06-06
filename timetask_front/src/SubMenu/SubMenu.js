@@ -5,9 +5,10 @@ export default function SubMenu() {
     return (
         <div className="submenu__container">
             <div className="submenu__list">
-                <Link to='/today' className="submenu__item">Задачи на сегодня</Link>
-                <Link to='/viewlist' className="submenu__item">Все задачи</Link>
-                <Link to='/completed' className="submenu__item">Выполненные задачи</Link>
+                <Link to='/viewlist' className="submenu__item">Входящие</Link>
+                <Link to='/today' className="submenu__item">Сегодня</Link>
+                <Link to='' className="submenu__item">Завтра</Link>
+                <Link to='/completed' className="submenu__item">Выполненные</Link>
             </div>
         </div>
     )
