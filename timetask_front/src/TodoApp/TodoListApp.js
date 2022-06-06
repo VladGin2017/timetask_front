@@ -28,12 +28,14 @@ export default function TodoListApp()  {
         return (setChecked(!checked));
     }
 
-    function addTodo(title, description) {
+    function addTodo(title, description, date) {
         axios.post('https://dev.timetask.ru/api/Task', { userId: localStorage.getItem('token'), 
                                                         title: title, 
-                                                        description: description })
+                                                        description: description,
+                                                        date: date })
         .then (response => {
             const newTodosList = response.data;
+            console.log(response.data);
             setTodos(todos.concat(newTodosList));  
         })
     }
