@@ -4,9 +4,9 @@ import AuthUser from "../Auth/AuthApp";
 const LoginPage = () => {
     
     return (
-        <div>
+        <div className="login-container">
             <AuthUser></AuthUser>
-            <p>
+            <p className="login-description">
                 Если еще не зарегистрированы, то <Link to="/register">зарегистрируйтесь!</Link>
             </p>
         </div>

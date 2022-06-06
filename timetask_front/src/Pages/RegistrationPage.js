@@ -3,7 +3,9 @@ import RegisterUser from "../Registration/RegistrationApp";
 
 function Register() {
     return (
-        <RegisterUser></RegisterUser>
+        <div className="login-container">
+            <RegisterUser></RegisterUser>
+        </div>
     )
 }
 
