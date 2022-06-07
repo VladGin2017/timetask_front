@@ -23,16 +23,17 @@ export default function TodoListApp()  {
     }, [])
 
     function completeTodos(id) {
-        axios.put('http://dev.timetask.ru/api/Task/Completed/' + id);
+        axios.put('https://dev.timetask.ru/api/Task/Completed/' + id);
         setTodos(todos.filter(todo => todo.id !== id));
         return (setChecked(!checked));
     }
 
-    function addTodo(title, description, date) {
+    function addTodo(title, description, date, priority) {
         axios.post('https://dev.timetask.ru/api/Task', { userId: localStorage.getItem('token'), 
                                                         title: title, 
                                                         description: description,
-                                                        date: date })
+                                                        date: date,
+                                                        priority: priority })
         .then (response => {
             const newTodosList = response.data;
             console.log(response.data);
