@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import Context from "../context";
 import { Link } from "react-router-dom";
 
@@ -10,9 +10,11 @@ export default function TodoItem(props) {
             <strong className="indef-of-task">{props.index + 1}.</strong>
             <span className="todo-list__item__container">
                 <div>
-                    <Link to='*' className="todo-list__item__container__title">{props.todos.title}</Link>
+                    <Link to={`/viewlist/${props.todos.id}`} className="todo-list__item__container__title">{props.todos.title}</Link>
                     <p className="todo-list__item__container__description">{props.todos.description}</p>
-                    <p>{props.todos.date}</p>
+                    {props.todos.date ? <p>Срок задачи до: {props.todos.date.split('T')[0]}</p> : null }
+                    {props.todos.priority ? <p>Приоритет: {props.todos.priority}</p> : null}
+                    
                 </div>
             </span>
             <button className="btn-change-task" onClick={ () => console.log(props.todos.id)}>Редактировать</button>
