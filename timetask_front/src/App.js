@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import HomePage from './Pages/HomePage'
 import LoginPage from './Pages/LoginPage'
@@ -8,6 +8,7 @@ import AllTasks from "./Pages/AllTodos";
 import TodayTask from "./Pages/TodayTodos";
 import CompletedTodo from "./Pages/CompletedTodos";
 import NotFoundPage from "./Pages/NotFoundPage";
+import EditPage from "./Pages/EditPage";
 
 
 export default function App(props) {
@@ -34,14 +35,15 @@ export default function App(props) {
                 </header>
                 <div>
                     <Routes>
-                        <Route path="/viewlist" element={<TodoListPage></TodoListPage>}></Route>
+                        <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route>
                         <Route path="/" element={<HomePage></HomePage>}></Route>
-                        <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+                        <Route path="/login/" element={<LoginPage></LoginPage>}></Route>
                         <Route path="/register" element={<Register></Register>}></Route>
                         <Route path="/viewlist" element={<AllTasks></AllTasks>}></Route>
+                        <Route path="/viewlist/:id" element={<EditPage></EditPage>}></Route>
                         <Route path="/today" element={<TodayTask></TodayTask>}></Route>
                         <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
-                        <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
+                        <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
                     </Routes>
                 </div>  
             </>
@@ -52,16 +54,17 @@ export default function App(props) {
                    
                     </div>
                 </header>
+                <LoginPage></LoginPage>
                 <div>
                     <Routes>
-                        <Route path="/viewlist" element={<TodoListPage></TodoListPage>}></Route>
+                        <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route>
                         <Route path="/" element={<HomePage></HomePage>}></Route>
-                        <Route path="/login" element={<LoginPage></LoginPage>}></Route>                             
+                        <Route path="/login/" element={<LoginPage></LoginPage>}></Route>                             
                         <Route path="/register" element={<Register></Register>}></Route>
                         <Route path="/viewlist" element={<AllTasks></AllTasks>}></Route>
                         <Route path="/today" element={<TodayTask></TodayTask>}></Route>
                         <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
-                        <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
+                        <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
                     </Routes>
                 </div>
             </>
