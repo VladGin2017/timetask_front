@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function SubMenu() {
     return (
         <div className="submenu__container">
             <div className="submenu__list">
-                <Link to='/viewlist' className="submenu__item">Входящие</Link>
-                <Link to='/today' className="submenu__item">Сегодня</Link>
-                <Link to='' className="submenu__item">Завтра</Link>
-                <Link to='/completed' className="submenu__item">Выполненные</Link>
+                <NavLink to='/viewlist' className="submenu__item">Входящие</NavLink>
+                <NavLink to='/today' className="submenu__item">Сегодня</NavLink>
+                <NavLink to='' className="submenu__item">Завтра</NavLink>
+                <NavLink to='/completed' className="submenu__item">Выполненные</NavLink>
             </div>
         </div>
     )
