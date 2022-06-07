@@ -20,6 +20,11 @@ ul {
   list-style: none;
 }
 
+.active {
+  background-color: #bbebee;
+  border-radius: 3px;
+}
+
 /* .header {
   display:  block;
   position: fixed;
@@ -189,6 +194,26 @@ ul {
 
 .btn-addclose {
   margin: 0px 0px 25px 15px
+}
+
+.priority-txt:focus {
+ 
+}
+
+.ft {
+  color: green;
+}
+
+.hd {
+  color: red;
+}
+
+.md {
+  color: yellow;
+}
+
+.nl {
+  color: blue;
 }
 
 /* ///////////////////////////// */
