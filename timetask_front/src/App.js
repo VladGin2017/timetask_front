@@ -23,7 +23,7 @@ export default function App(props) {
                 <header className='header'>
                     <input type="checkbox" id="nav-toggle" hidden></input>
                     <nav className="nav">
-                        <label for="nav-toggle" className="nav-toggle" onclick></label>
+                        <label htmlFor="nav-toggle" className="nav-toggle" onClick></label>
                         <ul className="header__menu">
                             <li><Link to="/" className="nav-menu__link">Главная</Link></li>
                             <li><Link to="/viewlist" className="nav-menu__link">Список задач</Link></li>
@@ -54,7 +54,6 @@ export default function App(props) {
                    
                     </div>
                 </header>
-                <LoginPage></LoginPage>
                 <div>
                     <Routes>
                         <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route>

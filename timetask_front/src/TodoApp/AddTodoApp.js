@@ -6,8 +6,10 @@ export default function AddTodoApp() {
     const [description, setDescription] = useState();
     const [date, setDate] = useState();
     const [priority, setPriority] = useState();
+    const [hours, setHours] = useState();
+    const [minutes, setMinutes] = useState();
+    
     const { addTodo } = useContext(Context);
-
     function handleSubmit(e) {
         e.preventDefault();
         addTodo(title, description, date, priority);
@@ -26,6 +28,10 @@ export default function AddTodoApp() {
                         <option value='2' className='priority-txt md'>2 приоритет</option>
                         <option value='3' className='priority-txt nl'>3 приоритет</option>
                     </select>
+                    <label>Часы:</label>
+                    <input type='number' id='hours' name='hours' value={hours} onChange={e => setHours(e.target.value)}></input>
+                    <label>Минуты:</label>
+                    <input type='number' id='minutes' name='minutes' value={minutes} onChange={e => setMinutes(e.target.value)}></input>
                     <input type='submit' className="btn register-form__btn" value='+ Добавить'></input>
                 </form>
             </div>
