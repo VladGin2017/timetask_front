@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function SubMenu() {
+export default function SubMenu() {    
     return (
+        
         <div className="submenu__container">
             <div className="submenu__list">
                 <NavLink to='/viewlist' className="submenu__item">Входящие</NavLink>
