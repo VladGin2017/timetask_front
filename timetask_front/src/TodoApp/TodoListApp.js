@@ -28,12 +28,14 @@ export default function TodoListApp()  {
         return (setChecked(!checked));
     }
 
-    function addTodo(title, description, date, priority) {
+    function addTodo(title, description, date, priority, hours, minutes) {
         axios.post('https://dev.timetask.ru/api/Task', { userId: localStorage.getItem('token'), 
                                                         title: title, 
                                                         description: description,
                                                         date: date,
-                                                        priority: priority })
+                                                        priority: priority,
+                                                        hours: hours,
+                                                        minutes: minutes })
         .then (response => {
             const newTodosList = response.data;
             console.log(response.data);
@@ -42,7 +44,7 @@ export default function TodoListApp()  {
     }
 
     return (
-        <Context.Provider value={{ completeTodos, addTodo}}>
+        <Context.Provider value={{ completeTodos, addTodo }}>
             <div className="todo-list">
                 <SubMenu></SubMenu>
                 <div className="todo-list__container">

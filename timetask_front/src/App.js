@@ -41,6 +41,7 @@ export default function App(props) {
                         <Route path="/register" element={<Register></Register>}></Route>
                         <Route path="/viewlist" element={<AllTasks></AllTasks>}></Route>
                         <Route path="/viewlist/:id" element={<EditPage></EditPage>}></Route>
+                        {/* <Route path="/viewlist/:id" element={<MyVerticallyCenteredModal></MyVerticallyCenteredModal>}></Route> */}
                         <Route path="/today" element={<TodayTask></TodayTask>}></Route>
                         <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
                         <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
