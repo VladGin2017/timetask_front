@@ -8,7 +8,7 @@ export default function TodoListPage() {
                 <h1 className="page-title">Входящие</h1>
                 {/* <p className="page-date">{date.toISOString().split('T')[0]}</p> */}
             </div>  
-            <TodoListApp></TodoListApp>
+            {/* <TodoListApp></TodoListApp> */}
         </div>
     )
 } 

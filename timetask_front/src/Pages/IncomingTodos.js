@@ -1,16 +1,17 @@
 import React from "react";
 import TodoListApp from "../TodoApp/TodoListApp"
+import TodoListIncoming from "../TodoApp/TodoListIncoming";
 
-const AllTasks = () => {
+const IncomingTodos = () => {
     return (
         <div className="page-container">
             <div className="page-info">
                 <h1 className="page-title">Входящие</h1>
-                {/* <p className="page-date">{date.toISOString().split('T')[0]}</p> */}
             </div>
-            <TodoListApp></TodoListApp>
+            <TodoListIncoming></TodoListIncoming>
+            {/* <TodoListApp></TodoListApp> */}
         </div>
     )
 }
 
-export default AllTasks;
+export default IncomingTodos;

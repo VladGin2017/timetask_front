@@ -13,6 +13,7 @@ export default function AddTodoApp() {
     function handleSubmit(e) {
         e.preventDefault();
         addTodo(title, description, date, priority, hours, minutes);
+        console.log(date);
         }
         return (
             <div className="register-form__container">

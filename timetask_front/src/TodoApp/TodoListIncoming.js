@@ -6,7 +6,7 @@ import SubMenu from "../SubMenu/SubMenu";
 import AddTodoFunc from "./AddTodoFunc";
 import Context from "../context";
 
-export default function TodoListApp()  {
+export default function TodoListIncoming()  {
     const [todos, setTodos] = useState([]);
     const [checked, setChecked] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -14,8 +14,8 @@ export default function TodoListApp()  {
     const dateNormalize = date.toISOString().split('T')[0];
     
     useEffect(() => {
-        axios.get('https://dev.timetask.ru/api/Task', {
-            params: {UserId: localStorage.getItem('token'), date: dateNormalize }
+        axios.get('https://dev.timetask.ru/api/Task/Incoming', {
+            params: {UserId: localStorage.getItem('token')}
         })
         .then(response => {
             const todosList = response.data;
