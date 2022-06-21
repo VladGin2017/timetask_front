@@ -51,22 +51,31 @@ export default function App(props) {
         ) : (
             <>  
                 <header className='header'>
+                    <input type="checkbox" id="nav-toggle" hidden></input>
+                    <nav className="nav">
+                        <label htmlFor="nav-toggle" className="nav-toggle" onClick></label>
+                        <ul className="header__menu">
+                            <li><Link to="/login" className="nav-menu__link">Вход</Link></li>
+                            <li><Link to="/register" className="nav-menu__link">Регистрация</Link></li>
+                        </ul>
+                    </nav>
+                </header>
+                    <Routes>
+                        <Route path="/register" element={<Register></Register>}></Route>
+                        <Route path="/login/" element={<LoginPage></LoginPage>}></Route>                             
+                        <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
+                    </Routes>
+                {/* <header className='header'>
                     <div className='header__menu-container'>
-                   
+
                     </div>
                 </header>
                 <div>
                     <Routes>
-                        {/* <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route> */}
-                        <Route path="/" element={<HomePage></HomePage>}></Route>
                         <Route path="/login/" element={<LoginPage></LoginPage>}></Route>                             
-                        <Route path="/register" element={<Register></Register>}></Route>
-                        <Route path="/viewlist" element={<IncomingTodos></IncomingTodos>}></Route>
-                        <Route path="/today" element={<TodayTask></TodayTask>}></Route>
-                        <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
                         <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
                     </Routes>
-                </div>
+                </div> */}
             </>
         )
     )

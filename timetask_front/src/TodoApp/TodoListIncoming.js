@@ -7,26 +7,24 @@ import AddTodoFunc from "./AddTodoFunc";
 import Context from "../context";
 
 export default function TodoListIncoming()  {
-    const [todos, setTodos] = useState([]);
+    const [todosIncoming, setTodosIncoming] = useState([]);
     const [checked, setChecked] = useState(false);
     const [loading, setLoading] = useState(true);
     const date = new Date();
     const dateNormalize = date.toISOString().split('T')[0];
     
     useEffect(() => {
-        axios.get('https://dev.timetask.ru/api/Task/Incoming', {
-            params: {UserId: localStorage.getItem('token')}
-        })
+        axios.get('https://dev.timetask.ru/api/Task/Incoming/' + localStorage.getItem('token'))
         .then(response => {
             const todosList = response.data;
-            setTodos(todosList);
+            setTodosIncoming(todosList);
             setLoading(false);
         })
     }, [])
 
     function completeTodos(id) {
         axios.put('https://dev.timetask.ru/api/Task/Completed/' + id);
-        setTodos(todos.filter(todo => todo.id !== id));
+        setTodosIncoming(todosIncoming.filter(todo => todo.id !== id));
         return (setChecked(!checked));
     }
 
@@ -41,7 +39,7 @@ export default function TodoListIncoming()  {
         .then (response => {
             const newTodosList = response.data;
             console.log(response.data);
-            setTodos(todos.concat(newTodosList));  
+            setTodosIncoming(todosIncoming.concat(newTodosList));  
         })
     }
 
@@ -52,8 +50,8 @@ export default function TodoListIncoming()  {
                 <div className="todo-list__container">
                     {loading && <Loader></Loader>}
                     <ul className="todo-list__list">
-                        {todos.length ? (<div>
-                            {todos.map((todos, index) => {
+                        {todosIncoming.length ? (<div>
+                            {todosIncoming.map((todos, index) => {
                                 return <TodoItem todos={todos} key={todos.id} index={index}></TodoItem>
                             }) }
                             </div>) : loading ? null : (<p className="todo-list__is-null">Ваш список задач пуст.</p>)}
