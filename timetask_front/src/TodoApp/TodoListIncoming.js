@@ -20,6 +20,14 @@ export default function TodoListIncoming()  {
             setTodosIncoming(todosList);
             setLoading(false);
         })
+        .catch(error => {
+            if (error.response) {
+                alert(error.message)
+            }
+            else if (error.request) {
+                alert(error.message)
+            }
+        })
     }, [])
 
     function completeTodos(id) {
@@ -40,6 +48,14 @@ export default function TodoListIncoming()  {
             const newTodosList = response.data;
             console.log(response.data);
             setTodosIncoming(todosIncoming.concat(newTodosList));  
+        })
+        .catch(error => {
+            if (error.response) {
+                alert(error.message)
+            }
+            else if (error.request) {
+                alert(error.message)
+            }
         })
     }
 

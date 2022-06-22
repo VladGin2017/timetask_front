@@ -18,6 +18,14 @@ export default function TodoListCompleted() {
             setCompletedTodos(completedTodos);
             setLoading(false);
         })
+        .catch(error => {
+            if (error.response) {
+                alert(error.message)
+            }
+            else if (error.request) {
+                alert(error.message)
+            }
+        })
     }, [])
     
     function unCompleteTodos(id) {
