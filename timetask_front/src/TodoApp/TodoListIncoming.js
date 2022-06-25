@@ -14,10 +14,12 @@ export default function TodoListIncoming()  {
     const dateNormalize = date.toISOString().split('T')[0];
     
     useEffect(() => {
-        axios.get('https://dev.timetask.ru/api/Task/Incoming/' + localStorage.getItem('token'))
+        axios.get('https://dev.timetask.ru/api/Task/Incoming/', {
+        params: {UserId: localStorage.getItem('token')}})
         .then(response => {
             const todosList = response.data;
             setTodosIncoming(todosList);
+            console.log(todosIncoming);
             setLoading(false);
         })
         .catch(error => {
@@ -31,7 +33,7 @@ export default function TodoListIncoming()  {
     }, [])
 
     function completeTodos(id) {
-        axios.put('https://dev.timetask.ru/api/Task/Completed/' + id);
+        axios.put('https://dev.timetask.ru/api/Task/Completed/' , {params: {id: id}});
         setTodosIncoming(todosIncoming.filter(todo => todo.id !== id));
         return (setChecked(!checked));
     }

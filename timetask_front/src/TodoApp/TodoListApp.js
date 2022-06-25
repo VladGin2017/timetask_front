@@ -33,7 +33,7 @@ export default function TodoListApp()  {
     }, [])
 
     function completeTodos(id) {
-        axios.put('https://dev.timetask.ru/api/Task/Completed/' + id);
+        axios.put('https://dev.timetask.ru/api/Task/Completed/', {params: {id: id}});
         setTodos(todos.filter(todo => todo.id !== id));
         return (setChecked(!checked));
     }
