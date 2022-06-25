@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useNavigate } from "react-router-dom";
+import {useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 export default function AuthUser() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [userToken, setUserToken] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    // const {signin} = useAuth();
+    const fromPage = location.state?.from?.pathname || '/'; 
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -13,15 +19,14 @@ export default function AuthUser() {
                                                         email: email,
                                                         password: password})
             .then(res => {
-                console.log(res);
-                console.log(res.data);
-                console.log(localStorage.getItem('token'));
                 if (res.data.errors) {
                     alert(res.data.errors);
                 }
                 if (res.data.id) {
+                    setUserToken(res.data.id);
                     localStorage.setItem('token', res.data.id);
-                    navigate('/today', {require: true});
+                    // signin(userToken, () => navigate(fromPage, {replace: true}));
+                    // navigate('/today', {require: true});
                 }
             })
         }

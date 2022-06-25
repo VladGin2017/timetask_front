@@ -9,7 +9,8 @@ import TodayTask from "./Pages/TodayTodos";
 import CompletedTodo from "./Pages/CompletedTodos";
 import NotFoundPage from "./Pages/NotFoundPage";
 import EditPage from "./Pages/EditPage";
-
+import { RequireAuth } from "./hoc/RequireAuth";
+import { AuthProvider } from "./hoc/ProviderAuth";
 
 export default function App(props) {
     const navigate = useNavigate();
@@ -34,18 +35,23 @@ export default function App(props) {
                     </nav>
                 </header>
                 <div>
-                    <Routes>
-                        {/* <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route> */}
-                        <Route path="/" element={<HomePage></HomePage>}></Route>
-                        <Route path="/login/" element={<LoginPage></LoginPage>}></Route>
-                        <Route path="/register" element={<Register></Register>}></Route>
-                        <Route path="/viewlist" element={<IncomingTodos></IncomingTodos>}></Route>
-                        <Route path="/viewlist/:id" element={<EditPage></EditPage>}></Route>
-                        {/* <Route path="/viewlist/:id" element={<MyVerticallyCenteredModal></MyVerticallyCenteredModal>}></Route> */}
-                        <Route path="/today" element={<TodayTask></TodayTask>}></Route>
-                        <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
-                        <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
-                    </Routes>
+                    <AuthProvider>
+                        <Routes>
+                            {/* <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route> */}
+                            <Route path="/" element={<HomePage></HomePage>}></Route>
+                            <Route path="/login/" element={<LoginPage></LoginPage>}></Route>
+                            <Route path="/register" element={<Register></Register>}></Route>
+                            <Route path="/viewlist" element={<IncomingTodos></IncomingTodos>}></Route>
+                            <Route path="/viewlist/:id" element={<EditPage></EditPage>}></Route>
+                            {/* <Route path="/viewlist/:id" element={<MyVerticallyCenteredModal></MyVerticallyCenteredModal>}></Route> */}
+                            <Route path="/today" element={<TodayTask></TodayTask>}></Route>
+                            {/* <Route path="/today" element={<RequireAuth>
+                                    <TodayTask></TodayTask>
+                                </RequireAuth>}></Route> */}
+                            <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
+                            <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
+                        </Routes>
+                    </AuthProvider>
                 </div>  
             </>
         ) : (
