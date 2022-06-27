@@ -64,7 +64,6 @@ export default function TodoListIncoming()  {
     return (
         <Context.Provider value={{ completeTodos, addTodo }}>
             <div className="todo-list">
-                <SubMenu></SubMenu>
                 <div className="todo-list__container">
                     {loading && <Loader></Loader>}
                     <ul className="todo-list__list">

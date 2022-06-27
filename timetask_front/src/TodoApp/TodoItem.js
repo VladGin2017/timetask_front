@@ -48,9 +48,9 @@ export default function TodoItem(props) {
                 <div className="register-form__container">
                     <form  className='register-form__form'>
                         <label htmlFor='title'>Название задачи:</label>
-                        <input type='text' id='title' name='title' value={title} onChange={e => setTitle(e.target.value)} placeholder='Название задачи' className="register-form__input" required></input>
+                        <input type='text' id='title' name='title' value={editTodo.title} placeholder='Название задачи' className="register-form__input" required></input>
                         <label htmlFor='description'>Описание задачи:</label>
-                        <textarea type='text' id='description' name='description' value={description} onChange={e => setDescription(e.target.value)} placeholder='Описание задачи' className="register-form__input" rows='10' cols='50' required></textarea>
+                        <textarea type='text' id='description' name='description' value={editTodo.description} placeholder='Описание задачи' className="register-form__input" rows='10' cols='50' required></textarea>
                         <label htmlFor='date'>Срок выполнения задачи:</label>
                         {/* <input type='date' id='date' name='date' value={editTodo.date} ></input> */}
                         <label htmlFor='priority'>Приоритет задачи:</label>

@@ -26,7 +26,7 @@ export default function AuthUser() {
                     setUserToken(res.data.id);
                     localStorage.setItem('token', res.data.id);
                     // signin(userToken, () => navigate(fromPage, {replace: true}));
-                    // navigate('/today', {require: true});
+                    navigate('/today', {require: true});
                 }
             })
         }

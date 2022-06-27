@@ -22,28 +22,22 @@ export default function App(props) {
         localStorage.getItem('token') ? (
             <>
                 <header className='header'>
-                    <input type="checkbox" id="nav-toggle" hidden></input>
-                    <nav className="nav">
-                        <label htmlFor="nav-toggle" className="nav-toggle" onClick></label>
-                        <ul className="header__menu">
+                    <ul className="header__menu">
                             <li><Link to="/" className="nav-menu__link">Главная</Link></li>
                             <li><Link to="/viewlist" className="nav-menu__link">Список задач</Link></li>
-                        </ul>
-                            <button className="btn btn-logout" onClick={() => clearStorage()}>
+                    </ul>
+                    <button className="btn btn-logout" onClick={() => clearStorage()}>
                                 Выход
-                            </button>
-                    </nav>
+                    </button>
                 </header>
                 <div>
                     <AuthProvider>
                         <Routes>
-                            {/* <Route path="/viewlist/" element={<TodoListPage></TodoListPage>}></Route> */}
                             <Route path="/" element={<HomePage></HomePage>}></Route>
                             <Route path="/login/" element={<LoginPage></LoginPage>}></Route>
                             <Route path="/register" element={<Register></Register>}></Route>
                             <Route path="/viewlist" element={<IncomingTodos></IncomingTodos>}></Route>
                             <Route path="/viewlist/:id" element={<EditPage></EditPage>}></Route>
-                            {/* <Route path="/viewlist/:id" element={<MyVerticallyCenteredModal></MyVerticallyCenteredModal>}></Route> */}
                             <Route path="/today" element={<TodayTask></TodayTask>}></Route>
                             {/* <Route path="/today" element={<RequireAuth>
                                     <TodayTask></TodayTask>
@@ -57,31 +51,17 @@ export default function App(props) {
         ) : (
             <>  
                 <header className='header'>
-                    <input type="checkbox" id="nav-toggle" hidden></input>
-                    <nav className="nav">
-                        <label htmlFor="nav-toggle" className="nav-toggle" onClick></label>
-                        <ul className="header__menu">
-                            <li><Link to="/login" className="nav-menu__link">Вход</Link></li>
+                    <ul className="header__menu">
                             <li><Link to="/register" className="nav-menu__link">Регистрация</Link></li>
-                        </ul>
-                    </nav>
+                            <li><Link to="/login" className="nav-menu__link">Вход</Link></li>
+                            {/* <li><Link to="/viewlist" className="nav-menu__link">Список задач</Link></li> */}
+                    </ul>
                 </header>
                     <Routes>
                         <Route path="/register" element={<Register></Register>}></Route>
                         <Route path="/login/" element={<LoginPage></LoginPage>}></Route>                             
                         <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
                     </Routes>
-                {/* <header className='header'>
-                    <div className='header__menu-container'>
-
-                    </div>
-                </header>
-                <div>
-                    <Routes>
-                        <Route path="/login/" element={<LoginPage></LoginPage>}></Route>                             
-                        <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
-                    </Routes>
-                </div> */}
             </>
         )
     )

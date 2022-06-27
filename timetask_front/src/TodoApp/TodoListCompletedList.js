@@ -3,7 +3,6 @@ import axios from "axios";
 import Context from "../context";
 import TodoListCompletedItem from "./TodoListCompletedItem";
 import Loader from "../Loader/Loader";
-import SubMenu from "../SubMenu/SubMenu";
 
 export default function TodoListCompleted() {
     const [completedTodos, setCompletedTodos] = useState([]);
@@ -36,7 +35,6 @@ export default function TodoListCompleted() {
         return(
             <Context.Provider value={{ unCompleteTodos }}>
                 <div className="todo-list">
-                    <SubMenu></SubMenu>
                     <div className="todo-list__container">
                         {loading && <Loader></Loader>}
                         <ul className="todo-list__list">

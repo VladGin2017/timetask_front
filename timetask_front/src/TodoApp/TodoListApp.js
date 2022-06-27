@@ -64,7 +64,7 @@ export default function TodoListApp()  {
     return (
         <Context.Provider value={{ completeTodos, addTodo }}>
             <div className="todo-list">
-                <SubMenu></SubMenu>
+                {/* <SubMenu></SubMenu> */}
                 <div className="todo-list__container">
                     {loading && <Loader></Loader>}
                     <ul className="todo-list__list">
