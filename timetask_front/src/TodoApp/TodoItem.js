@@ -16,7 +16,7 @@ export default function TodoItem(props) {
     
     function handleSubmit(e) {
         e.preventDefault();
-        addTodo(title, description);
+        
     }
 
     function EditModalPage(props) {
@@ -31,14 +31,13 @@ export default function TodoItem(props) {
             }     
             )
         }, [])
-      
         return (
         <Modal
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-        >
+        >   
             <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
                 <p>Редактирование задачи</p>
@@ -46,9 +45,9 @@ export default function TodoItem(props) {
             </Modal.Header>
             <Modal.Body>
                 <div className="register-form__container">
-                    <form  className='register-form__form'>
+                    <form className='register-form__form'>
                         <label htmlFor='title'>Название задачи:</label>
-                        <input type='text' id='title' name='title' value={editTodo.title} placeholder='Название задачи' className="register-form__input" required></input>
+                        <input type='text' id='title' name='title' value={editTodo.title}  placeholder='Название задачи' className="register-form__input" required></input>
                         <label htmlFor='description'>Описание задачи:</label>
                         <textarea type='text' id='description' name='description' value={editTodo.description} placeholder='Описание задачи' className="register-form__input" rows='10' cols='50' required></textarea>
                         <label htmlFor='date'>Срок выполнения задачи:</label>
@@ -68,7 +67,7 @@ export default function TodoItem(props) {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-            <input type='submit' className="btn register-form__btn" value='Редактировать'></input>
+            <input type='submit' className="btn register-form__btn" value='Сохранить'></input>
             <button className="btn register-form__btn" onClick={props.onHide}>Отмена</button>
             </Modal.Footer>
         </Modal>
