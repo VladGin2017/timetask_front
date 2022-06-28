@@ -178,10 +178,14 @@ a {
   outline: none;
   border: none;
   background-color: transparent;
-  background-color: #70afce;
+  background-color: #3A3A3A;
   color: #ffffff;
   cursor: pointer;
-} 
+}
+
+.btn-logout {
+  background-color: #9ab8ba;
+}
 
 .register-form__btn {
   width: 150px;
@@ -229,10 +233,11 @@ a {
   display: flex;
 }
 .todo-list__container {
-  min-width: 400px;
+  min-width: 670px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 50px; 
+  padding-left: 50px;
 }
 
 .chk-box__done {
@@ -249,12 +254,12 @@ a {
   margin-left: auto;
   cursor: pointer;
   border: none;
-  background-color: #9ab8ba;
+  background-color: #929292;
   border-radius: 5px;
 }
 
 .btn-change-task:hover {
-  background-color: #79b0b4;
+  background-color: #525252;
 }
 
 .todo-list__list {
@@ -273,14 +278,16 @@ a {
 }
 
 .todo-list__item__container__title {
-  font-size: 22px;
+  font-size: 18px;
   margin: 0;
   padding-bottom: 5px;
+  color: #000;
+  font-weight: 400;
 }
 
 .todo-list__item__container__description {
-  padding: 5px 15px 0px 0px;
-  font-size: 18px;
+  padding: 0px 15px 0px 0px;
+  font-size: 16px;
   margin: 0;
   padding-bottom: 10px;
   color: #525252;
@@ -322,6 +329,7 @@ a {
 .page-date{
   font-size: 14px;
   font-weight: 500;
+  padding-left: 15px;
 }
 /* ////////////////////////////// */
 
@@ -347,10 +355,10 @@ a {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #045256;
+  border: 8px solid #929292;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #045256 transparent transparent transparent;
+  border-color: #929292 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
@@ -400,6 +408,14 @@ a {
   font-size: 20px;
   font-weight: 400;
   padding-bottom: 10px;
+}
+
+.arch-clr {
+  color: #f7ab4e;
+}
+
+.trash-clr {
+  color: #f06157;
 }
 
 .submenu__vertical-line {

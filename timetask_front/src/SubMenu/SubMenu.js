@@ -33,10 +33,10 @@ export default function SubMenu() {
                     </li>
                     <div className="submenu__vertical-line"></div>
                     <li className="submenu__item">
-                        <NavLink to='/completed' className="submenu__link">Архив</NavLink>
+                        <NavLink to='/completed' className="submenu__link arch-clr">Архив</NavLink>
                     </li>
                     <li className="submenu__item">
-                        <NavLink to='/completed' className="submenu__link">Корзина</NavLink>
+                        <NavLink to='/completed' className="submenu__link trash-clr">Корзина</NavLink>
                     </li>
                     <div className="submenu__vertical-line"></div>
                 </ul>

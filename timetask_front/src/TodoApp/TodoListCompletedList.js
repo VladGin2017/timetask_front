@@ -28,7 +28,7 @@ export default function TodoListCompleted() {
     }, [])
     
     function unCompleteTodos(id) {
-        axios.put('https://dev.timetask.ru/api/Task/NotCompleted/' + id)
+        axios.put('https://dev.timetask.ru/api/Task/NotCompleted?Id=' + id)
         setCompletedTodos(completedTodos.filter(todo => todo.id !== id))
     }
 

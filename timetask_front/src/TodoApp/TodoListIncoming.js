@@ -19,7 +19,6 @@ export default function TodoListIncoming()  {
         .then(response => {
             const todosList = response.data;
             setTodosIncoming(todosList);
-            console.log(todosIncoming);
             setLoading(false);
         })
         .catch(error => {
@@ -33,7 +32,7 @@ export default function TodoListIncoming()  {
     }, [])
 
     function completeTodos(id) {
-        axios.put('https://dev.timetask.ru/api/Task/Completed/' , {params: {id: id}});
+        axios.put('https://dev.timetask.ru/api/Task/Completed?Id=' + id);
         setTodosIncoming(todosIncoming.filter(todo => todo.id !== id));
         return (setChecked(!checked));
     }
@@ -48,7 +47,6 @@ export default function TodoListIncoming()  {
                                                         minutes: minutes })
         .then (response => {
             const newTodosList = response.data;
-            console.log(response.data);
             setTodosIncoming(todosIncoming.concat(newTodosList));  
         })
         .catch(error => {
