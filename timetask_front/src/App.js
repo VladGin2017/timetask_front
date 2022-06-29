@@ -9,6 +9,7 @@ import TodayTask from "./Pages/TodayTodos";
 import CompletedTodo from "./Pages/CompletedTodos";
 import NotFoundPage from "./Pages/NotFoundPage";
 import EditPage from "./Pages/EditPage";
+import RemovedTodos from "./Pages/RemovedTodosPage";
 import { RequireAuth } from "./hoc/RequireAuth";
 import { AuthProvider } from "./hoc/ProviderAuth";
 
@@ -43,6 +44,7 @@ export default function App(props) {
                                     <TodayTask></TodayTask>
                                 </RequireAuth>}></Route> */}
                             <Route path="/completed" element={<CompletedTodo></CompletedTodo>}></Route>
+                            <Route path="/removed_todo" element={<RemovedTodos></RemovedTodos>}></Route>
                             <Route path="/*" element={<NotFoundPage></NotFoundPage>}></Route>
                         </Routes>
                     </AuthProvider>

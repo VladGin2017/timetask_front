@@ -36,7 +36,7 @@ export default function SubMenu() {
                         <NavLink to='/completed' className="submenu__link arch-clr">Архив</NavLink>
                     </li>
                     <li className="submenu__item">
-                        <NavLink to='/completed' className="submenu__link trash-clr">Корзина</NavLink>
+                        <NavLink to='/removed_todo' className="submenu__link trash-clr">Корзина</NavLink>
                     </li>
                     <div className="submenu__vertical-line"></div>
                 </ul>

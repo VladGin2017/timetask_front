@@ -61,8 +61,30 @@ export default function TodoListApp()  {
         })
     }
 
+    function RemoveTodoItem(removeItem) {
+        axios.put('https://dev.timetask.ru/api/Task/Delete', 
+        {
+            params: {
+                Id: removeItem
+            }
+        }).then(response => {
+            const newTodosList = response.data;
+            console.log(response.data);
+            setTodos(todos.concat(newTodosList));
+        })
+        .catch(error => {
+            if (error.response) {
+                alert(error.message)
+            }
+            else if (error.request) {
+                alert(error.message)
+            }
+        })
+        
+    }
+
     return (
-        <Context.Provider value={{ completeTodos, addTodo }}>
+        <Context.Provider value={{ completeTodos, addTodo, RemoveTodoItem }}>
             <div className="todo-list">
                 {/* <SubMenu></SubMenu> */}
                 <div className="todo-list__container">

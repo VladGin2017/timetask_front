@@ -13,10 +13,15 @@ export default function TodoItem(props) {
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
     const { addTodo } = useContext(Context);
+    const { RemoveTodoItem } = useContext(Context);
     
     function handleSubmit(e) {
         e.preventDefault();
         
+    }
+
+    function RemoveTodo(props) {
+        RemoveTodoItem(props.todos.id);
     }
 
     function EditModalPage(props) {
@@ -88,6 +93,7 @@ export default function TodoItem(props) {
                     </div>
                 </span>
                 <button className="btn-change-task" variant="primary" onClick={() => setModalShow(props.todos.id)}>Редактировать</button>
+                <button className="btn-change-task" variant="primary" onClick={() => RemoveTodo(props.todos.id)}>Удалить</button>
                 <input type='checkbox' className="chk-box__done" checked={completeTodos}  onChange={ () => completeTodos(props.todos.id)}></input>
             </li>
             <EditModalPage
